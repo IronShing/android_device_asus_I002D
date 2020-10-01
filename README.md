@@ -1,0 +1,1 @@
+# android_device_asus_I002D
