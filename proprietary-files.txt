@@ -11,16 +11,6 @@ etc/sysconfig/ims-hiddenapi-package-whitelist.xml
 priv-app/GameBroadcaster/lib/arm64/libJniModule.so
 
 # Camera
-lib64/DataSet/arch/DIT_List.cfg
-lib64/DataSet/ditSCidGen/msgchk.db
-lib64/DataSet/ispDB/ParameterDB.db
-lib64/libxditk_DIT_MSMv1.so
-lib64/libxditk_DIT_Manager.so
-lib64/libxditk_ISP.so
-lib64/libxditk_arch.so
-lib64/libxditk_ditArchLIB.so
-lib64/libxditk_ditBSP.so
-lib64/libxditk_ditBSP_JNI.so
 -priv-app/AsusCamera/AsusCamera.apk;PRESIGNED
 priv-app/AsusCamera/lib/arm64/libasus_camera_panorama.so
 priv-app/AsusCamera/lib/arm64/libyuv_camera.so
@@ -38,6 +28,8 @@ priv-app/AsusCamera/lib/arm64/libyuv_util.so
 priv-app/AsusCamera/lib/arm64/libUndistort.so
 priv-app/AsusCamera/lib/arm64/libasusundistort.so
 priv-app/AsusCamera/lib/arm64/libarcsoft_object_tracking.so
+
+# Motor
 -priv-app/MotorService/MotorService.apk;PRESIGNED
 priv-app/MotorService/lib/arm64/libAsusMotorDriverHAL.so
 priv-app/MotorService/lib/arm64/libjni_motor.so
