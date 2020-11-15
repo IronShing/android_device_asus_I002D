@@ -129,3 +129,6 @@ etc/videoeditor7/music/6.mp3
 etc/videoeditor7/music/8.mp3
 etc/videoeditor7/music/4.mp3
 etc/videoeditor7/music/7.mp3
+
+# Telephony
+etc/permissions/qti_libpermissions.xml
