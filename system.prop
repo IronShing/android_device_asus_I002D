@@ -43,8 +43,6 @@ persist.mm.enable.prefetch=true
 #Netflix custom property
 ro.netflix.bsp_rev=Q8250-19134-1
 
-ro.audio.monitorRotation=true
-
 #
 # system props for the data modules
 #
@@ -123,10 +121,6 @@ persist.debug.wfd.enable=1
 ##property to choose between virtual/external wfd display
 persist.sys.wfd.virtual=0
 
-
-#property to enable HWC for VDS
-debug.sf.enable_hwc_vds=1
-
 #property to latch unsignaled buffer
 #debug.sf.latch_unsignaled=1
 
@@ -164,9 +158,6 @@ qemu.hw.mainkeys=0
 
 #Expose aux camera for below packages
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.asus.snapcam,com.asus.camera
-
-#enable IZat OptInApp overlay
-persist.vendor.overlay.izat.optin=rro
 
 # Property for backup NTP Server
 persist.backup.ntpServer="0.pool.ntp.org"
