@@ -17,60 +17,11 @@
 
 set -e
 
+# Required!
 export DEVICE=I002D
+export DEVICE_COMMON=sm8250-common
 export VENDOR=asus
 
 export DEVICE_BRINGUP_YEAR=2020
 
-# Load extract_utils and do some sanity checks
-MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
-
-HAVOC_ROOT="${MY_DIR}"/../../..
-
-HELPER="${HAVOC_ROOT}/vendor/havoc/build/tools/extract_utils.sh"
-if [ ! -f "${HELPER}" ]; then
-    echo "Unable to find helper script at ${HELPER}"
-    exit 1
-fi
-source "${HELPER}"
-
-# Default to sanitizing the vendor folder before extraction
-CLEAN_VENDOR=true
-
-SECTION=
-KANG=
-
-while [ "${#}" -gt 0 ]; do
-    case "${1}" in
-        -n | --no-cleanup )
-                CLEAN_VENDOR=false
-                ;;
-        -k | --kang )
-                KANG="--kang"
-                ;;
-        -s | --section )
-                SECTION="${2}"; shift
-                CLEAN_VENDOR=false
-                ;;
-        * )
-                SRC="${1}"
-                ;;
-    esac
-    shift
-done
-
-if [ -z "${SRC}" ]; then
-    SRC="adb"
-fi
-
-# Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${HAVOC_ROOT}" true "${CLEAN_VENDOR}"
-
-extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
-        "${KANG}" --section "${SECTION}"
-
-sed -i 's/<library name="android.hidl.manager-V1.0-java"/<library name="android.hidl.manager@1.0-java"/g' \
-        "${HAVOC_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary/etc/permissions/qti_libpermissions.xml"
-
-"${MY_DIR}/setup-makefiles.sh"
+"./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
