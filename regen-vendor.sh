@@ -19,7 +19,7 @@ VENDOR_SKIP_FILES_DEVICE=(
     # Audio configs
     "etc/audio/audio_policy_configuration.xml"
     "etc/audio_policy_configuration.xml"
-    "etc/audio_policy_configuration_ZS661KS.xml"
+    "etc/audio_policy_configuration_ZS670KS.xml"
 
     # SLA Dual Network
     "app/slaservice/slaservice.apk"
