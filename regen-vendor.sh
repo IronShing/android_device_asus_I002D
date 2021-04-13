@@ -79,6 +79,8 @@ VENDOR_SKIP_FILES_DEVICE=(
     "lib/hw/android.hardware.vibrator@1.0-impl.so"
     "etc/init/android.hardware.vibrator@1.0-service.rc"
     "bin/hw/android.hardware.vibrator@1.0-service"
+    "vendor/lib/libplatformconfig.so"
+    "-vendor/lib64/libplatformconfig.so"
 )
 
 . ../sm8250-common/regen-vendor.sh "$@"
