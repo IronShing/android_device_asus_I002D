@@ -32,6 +32,7 @@ BUILD_BROKEN_DUP_RULES := true
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/asus/tequila
 TARGET_KERNEL_CONFIG := vendor/tequila_defconfig
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Properties
 TARGET_OTA_ASSERT_DEVICE := I002D, WW_I002D, ASUS_I002D
