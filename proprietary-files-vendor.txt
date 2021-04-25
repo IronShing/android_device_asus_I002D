@@ -1145,7 +1145,6 @@ vendor/etc/usb_audio_policy_configuration.xml
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.clearkey.xml
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 -vendor/etc/vintf/manifest/power.xml
--vendor/etc/vintf/manifest/vendor.goodix.hardware.biometrics.fingerprint.xml
 -vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
 -vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml
 -vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml
