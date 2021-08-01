@@ -19,9 +19,34 @@ set -e
 
 # Required!
 export DEVICE=I002D
-export DEVICE_COMMON=sm8250-common
 export VENDOR=asus
 
 export DEVICE_BRINGUP_YEAR=2020
 
-"./../../${VENDOR}/${DEVICE_COMMON}/setup-makefiles.sh" "$@"
+# Load extract_utils and do some sanity checks
+MY_DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
+
+HAVOC_ROOT="${MY_DIR}/../../.."
+
+HELPER="${HAVOC_ROOT}/tools/extract-utils/extract_utils.sh"
+if [ ! -f "${HELPER}" ]; then
+    echo "Unable to find helper script at ${HELPER}"
+    exit 1
+fi
+source "${HELPER}"
+
+# Initialize the helper
+setup_vendor "$DEVICE" "$VENDOR" "$HAVOC_ROOT"
+
+# Copyright headers and guards
+write_headers "I002D"
+
+# The standard common blobs
+write_makefiles "${MY_DIR}/proprietary-files.txt" true
+
+write_makefiles "${MY_DIR}/proprietary-files-product.txt" true
+
+# Finish
+write_footers
+
