@@ -26,8 +26,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 # Extra Folders
 BOARD_ROOT_EXTRA_FOLDERS += motor_fw1 motor_fw2
 
-# Build
-BUILD_BROKEN_DUP_RULES := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/asus/tequila
@@ -37,8 +35,6 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 # Properties
 TARGET_OTA_ASSERT_DEVICE := I002D, WW_I002D, ASUS_I002D
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
 
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
