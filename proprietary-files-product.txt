@@ -3,9 +3,6 @@
 -system_ext/framework/vendor.qti.hardware.alarm-V1.0-java.jar
 system_ext/lib64/vendor.qti.hardware.alarm@1.0.so
 
-# Bluetooth
-system_ext/lib64/vendor.qti.hardware.audiohalext@1.0.so
-
 # Camera
 system_ext/lib64/libQSEEComAPI_system.so
 system_ext/lib64/vendor.qti.hardware.scve.objecttracker@1.0-adapter-helper.so
@@ -120,7 +117,6 @@ system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 
 # IOP
 system_ext/lib64/vendor.qti.hardware.iop@2.0.so
-system_ext/lib64/vendor.qti.hardware.perf@2.0.so
 
 system_ext/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
@@ -129,7 +125,6 @@ system_ext/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 system_ext/lib64/libsecureuisvc_jni.so
 system_ext/lib64/libsecureui_svcsock_system.so
 system_ext/lib64/vendor.qti.hardware.tui_comm@1.0.so
-system_ext/lib64/libcryptfs_hw.so
 
 # System Helper
 -system_ext/app/com.qualcomm.qti.services.systemhelper/com.qualcomm.qti.services.systemhelper.apk
