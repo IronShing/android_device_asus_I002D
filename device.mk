@@ -35,6 +35,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_volumes_ZS670KS.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes_ZS670KS.xml
 
 
+# Prebuilt
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/system,system)
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/fts_ts.idc:system/usr/idc/fts_ts.idc \
