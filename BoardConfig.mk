@@ -34,6 +34,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/vendor_framework_co
 TARGET_KERNEL_SOURCE := kernel/asus/tequila
 TARGET_KERNEL_CONFIG := vendor/tequila_defconfig
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 
 # Properties
 TARGET_OTA_ASSERT_DEVICE := I002D, WW_I002D, ASUS_I002D
