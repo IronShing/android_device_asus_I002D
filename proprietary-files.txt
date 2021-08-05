@@ -10,7 +10,6 @@ system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 priv-app/AsusCamera/lib/arm64/libarcsoft_object_tracking.so
 priv-app/AsusCamera/lib/arm64/libarcsoft_panorama_burstcapture.so
 priv-app/AsusCamera/lib/arm64/libarcsoft_panorama_interval_capture.so
-priv-app/AsusCamera/lib/arm64/libarcsoft_portrait_distortion_correction_rog3.so
 priv-app/AsusCamera/lib/arm64/libarcsoft_portrait_distortion_correction_zf7.so
 priv-app/AsusCamera/lib/arm64/libasus_camera_interval_panorama.so
 priv-app/AsusCamera/lib/arm64/libasusundistort.so
