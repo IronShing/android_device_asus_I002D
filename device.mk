@@ -48,6 +48,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/goodixfp.kl:system/usr/keylayout/goodixfp.kl \
     $(LOCAL_PATH)/keylayout/i-rocks_Bluetooth_Keyboard.kl:system/usr/keylayout/i-rocks_Bluetooth_Keyboard.kl
 
+# Camera
+PRODUCT_PACKAGES += \
+    CameraTile
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
