@@ -33,7 +33,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/vendor_framework_co
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/asus/tequila
 TARGET_KERNEL_CONFIG := vendor/tequila_defconfig
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 
 # Properties
