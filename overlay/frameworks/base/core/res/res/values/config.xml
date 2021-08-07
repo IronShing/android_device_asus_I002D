@@ -198,9 +198,13 @@
 
      <!-- Whether the device supports Smart Pixels -->
      <bool name="config_enableSmartPixels">true</bool>
-    <string-array name="config_deviceDisabledComponents" translatable="false">
-        <item>com.qti.slaservice/com.qti.slaservice.SLAService</item>
-        <item>com.qti.slaservice/com.qti.slaservice.SLABootReceiver</item>
-    </string-array>
+
+     <!-- Whether device has fingerprint on power button -->
+     <bool name="config_powerButtonFingerprint">true</bool>
+
+     <string-array name="config_deviceDisabledComponents" translatable="false">
+          <item>com.qti.slaservice/com.qti.slaservice.SLAService</item>
+          <item>com.qti.slaservice/com.qti.slaservice.SLABootReceiver</item>
+     </string-array>
 
 </resources>
