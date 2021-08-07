@@ -175,6 +175,16 @@
         <item>255</item>
     </integer-array>
 
+
+    <!-- Adaptive charging -->
+    <integer name="config_adaptiveChargingCutoffLevel">80</integer>
+    <integer name="config_adaptiveChargingResumeLevel">60</integer>
+    <integer name="config_adaptiveChargingCutoffTemperature">40</integer>
+    <integer name="config_adaptiveChargingResumeTemperature">30</integer>
+    <string name="config_adaptiveChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/charge_done</string>
+    <string name="config_adaptiveChargingSuspendValue" translatable="false">1</string>
+    <string name="config_adaptiveChargingResumeValue" translatable="false">0</string>
+
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
@@ -195,5 +205,16 @@
          hysteresis threshold. -->
     <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
+
+     <!-- Whether the device supports Smart Pixels -->
+     <bool name="config_enableSmartPixels">true</bool>
+
+     <!-- Whether device has fingerprint on power button -->
+     <bool name="config_powerButtonFingerprint">true</bool>
+
+     <string-array name="config_deviceDisabledComponents" translatable="false">
+          <item>com.qti.slaservice/com.qti.slaservice.SLAService</item>
+          <item>com.qti.slaservice/com.qti.slaservice.SLABootReceiver</item>
+     </string-array>
 
 </resources>
