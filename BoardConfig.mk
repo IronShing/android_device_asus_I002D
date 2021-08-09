@@ -29,6 +29,8 @@ BOARD_ROOT_EXTRA_FOLDERS += motor_fw1 motor_fw2
 #HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/vendor_framework_compatibility_matrix.xml
 
+# Build
+BUILD_BROKEN_DUP_RULES := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/asus/tequila
