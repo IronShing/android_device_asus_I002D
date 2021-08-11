@@ -6,7 +6,7 @@ system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 -app/aptxals/aptxals.apk
 
 # Camera
--priv-app/AsusCamera/AsusCamera.apk
+-priv-app/AsusCamera/AsusCamera.apk;PRESIGNED
 priv-app/AsusCamera/lib/arm64/libarcsoft_object_tracking.so
 priv-app/AsusCamera/lib/arm64/libarcsoft_panorama_burstcapture.so
 priv-app/AsusCamera/lib/arm64/libarcsoft_panorama_interval_capture.so
