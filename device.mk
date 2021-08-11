@@ -14,7 +14,14 @@
 # limitations under the License.
 #
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Include GSI keys
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
+# Api
+PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_TARGET_VNDK_VERSION := 30
 
 # Device uses high-density artwork where available
@@ -25,19 +32,143 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-# Api
-PRODUCT_SHIPPING_API_LEVEL := 29
+# A/B
+AB_OTA_UPDATER := true
 
-# audio
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    product \
+    system \
+    system_ext \
+    vbmeta \
+    vbmeta_system
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
+# tell update_engine to not change dynamic partition table during updates
+# needed since our qti_dynamic_partitions does not include
+# vendor and odm and we also dont want to AB update them
+TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
+
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService
+
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration_ZS670KS.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
     $(LOCAL_PATH)/audio/audio_policy_configuration_ZS670KS.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml \
     $(LOCAL_PATH)/audio/audio_policy_volumes_ZS670KS.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes_ZS670KS.xml
 
+# Bluetooth
+PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/system/bt/conf
 
-# Prebuilt
+PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/qva
+
+PRODUCT_PACKAGES += BluetoothExt
+PRODUCT_PACKAGES += libbluetooth_qti
+PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
+
+PRODUCT_PACKAGES += \
+    BluetoothQti
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.bluetooth.a2dp_offload.disabled=false \
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
+    persist.vendor.bt.aac_frm_ctl.enabled=true \
+    persist.vendor.bt.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
+    ro.bluetooth.a2dp_offload.supported=true \
+    vendor.bluetooth.soc=cherokee \
+    vendor.qcom.bluetooth.soc=cherokee
+
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/system,system)
+    $(LOCAL_PATH)/configs/component-overrides_qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
+
+# Boot control
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl.recovery \
+    bootctrl.kona.recovery
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+
+# CameraTile
+PRODUCT_PACKAGES += \
+    CameraTile
+
+# Charger images
+PRODUCT_PACKAGES += \
+    animation.txt \
+    font_charger.png
+
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.mapper@3.0-impl-qti-display \
+    vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.composer-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    gralloc.kona \
+    memtrack.kona \
+    libion \
+    libtinyxml2 \
+    libtinyalsa \
+    libqdMetaData \
+    libdisplayconfig.vendor \
+    libdisplayconfig.vendor \
+    vendor.display.config@1.0.vendor \
+    vendor.display.config@1.1.vendor \
+    vendor.display.config@1.2.vendor \
+    vendor.display.config@1.3.vendor \
+    vendor.display.config@1.4.vendor \
+    vendor.display.config@1.5.vendor \
+    vendor.display.config@1.6.vendor \
+    vendor.display.config@1.7.vendor \
+    vendor.display.config@1.8.vendor \
+    vendor.display.config@1.9.vendor \
+    vendor.display.config@1.10.vendor \
+    vendor.display.config@1.11.vendor \
+    vendor.display.config@1.12 \
+    vendor.display.config@1.12.vendor \
+    vendor.display.config@1.13.vendor \
+    vendor.display.config@1.14.vendor \
+    vendor.display.config@1.15.vendor \
+    vendor.qti.hardware.display.mapper@1.0.vendor \
+    vendor.qti.hardware.display.mapper@2.0.vendor \
+    vendor.qti.hardware.display.mapper@3.0.vendor
+
+# FM
+PRODUCT_PACKAGES += \
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    fastbootd
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0 \
+    libhidltransport \
+    libhwbinder
+
+PRODUCT_BOOT_JARS += android.hidl.manager-V1.0-java
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -48,20 +179,85 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/goodixfp.kl:system/usr/keylayout/goodixfp.kl \
     $(LOCAL_PATH)/keylayout/i-rocks_Bluetooth_Keyboard.kl:system/usr/keylayout/i-rocks_Bluetooth_Keyboard.kl
 
-# Camera
+# Live Wallpapers
 PRODUCT_PACKAGES += \
-    CameraTile
+    LiveWallpapers \
+    LiveWallpapersPicker \
+    VisualizationWallpapers \
+    librs_jni
 
-# Ramdisk
+# Netutils
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0 \
+    libandroid_net
+
+# Prebuilt
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+    $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/product,product) \
+    $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/system,system) \
+    $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/system_ext,system_ext)
+
+# Properties
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
-# Inherit from asus sm8250-common
-$(call inherit-product, device/asus/sm8250-common/common.mk)
+# Systemhelper
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.systemhelper@1.0
+
+# Telephony
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+    tcmiface \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
+# Update engine
+PRODUCT_PACKAGES += \
+    otapreopt_script \
+    update_engine \
+    update_engine_sideload \
+    update_verifier
+
+PRODUCT_HOST_PACKAGES += \
+    brillo_update_payload
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
+
+PRODUCT_PACKAGES += \
+    vndk_package
+
+PRODUCT_BUILD_SUPER_PARTITION := false
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Vibrator
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
+
+# Wifi
+PRODUCT_PACKAGES += \
+    libavservices_minijail \
+    libnl \
+    TetheringOverlay \
+    WifiOverlay
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/asus/I002D/I002D-vendor.mk)
