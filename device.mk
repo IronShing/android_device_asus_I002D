@@ -69,28 +69,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_volumes_ZS670KS.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_volumes_ZS670KS.xml
 
 # Bluetooth
-PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/commonsys/system/bt/conf
-
-PRODUCT_PACKAGE_OVERLAYS += vendor/qcom/opensource/commonsys-intf/bluetooth/overlay/qva
-
-PRODUCT_PACKAGES += BluetoothExt
-PRODUCT_PACKAGES += libbluetooth_qti
-PRODUCT_PACKAGES += vendor.qti.hardware.bluetooth_dun-V1.0-java
-
 PRODUCT_PACKAGES += \
     BluetoothQti
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.bluetooth.a2dp_offload.disabled=false \
-    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    persist.vendor.bt.aac_frm_ctl.enabled=true \
-    persist.vendor.bt.enable.splita2dp=true \
-    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
-    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    ro.bluetooth.a2dp_offload.supported=true \
-    vendor.bluetooth.soc=cherokee \
-    vendor.qcom.bluetooth.soc=cherokee
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides_qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
