@@ -73,7 +73,15 @@ persist.fuse_sdcard=true
 
 # Bluetooth
 ro.bluetooth.library_name=libbluetooth_qti.so
+persist.vendor.btstack.aac_frm_ctl.enabled=true
+persist.vendor.service.bt.iotinfo.report.enable=true
+persist.vendor.btstack.enable.twsplus=true
+persist.vendor.btstack.enable.twsplussho=true
+persist.bluetooth.avrcpversion=avrcp16
 
+# ASUS BSP Bluetooth: disable SWB
+persist.vendor.qcom.bluetooth.enable.swb=false
+persist.vendor.qcom.bluetooth.enable.swbpm=false
 #system prop for RmNet Data
 persist.rmnet.data.enable=true
 persist.data.wda.enable=true
