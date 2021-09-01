@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015 The CyanogenMod Project
+               (C) 2017-2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- ZenParts strings -->
+    <string name="zenparts">ZenParts</string>
+    <string name="zenparts_summary">Additional Tweaks</string>
+    
+    <string name="camera_utils">Camera Utils</string>
+    <string name="camera_utils_summary">Camera angle calibration...</string>
+    
+    <string name="calibrate_camera">Calibrate camera angle</string>
+    <string name="calibrate_cover">Calibrate asus cover</string>
+    <string name="calibrate_summary">Launch calibration utility...</string>
+
+    <!-- CameraTile-->
+    <string name="camera_label">Rotate camera</string>
+</resources>

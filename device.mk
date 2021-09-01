@@ -83,9 +83,9 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
-# CameraTile
+# ZenParts
 PRODUCT_PACKAGES += \
-    CameraTile
+    ZenParts
 
 # Charger images
 PRODUCT_PACKAGES += \
