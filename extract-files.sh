@@ -63,7 +63,8 @@ function blob_fixup() {
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$HAVOC_ROOT" false "$CLEAN_VENDOR"
 
-extract "$MY_DIR"/proprietary-files-product.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files-vendor.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files-system_ext.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 export DEVICE_BRINGUP_YEAR=2020

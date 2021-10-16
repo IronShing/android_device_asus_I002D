@@ -211,11 +211,12 @@
      <!-- Whether device has fingerprint on power button -->
      <bool name="config_powerButtonFingerprint">true</bool>
 
+<!--
      <string-array name="config_deviceDisabledComponents" translatable="false">
           <item>com.qti.slaservice/com.qti.slaservice.SLAService</item>
           <item>com.qti.slaservice/com.qti.slaservice.SLABootReceiver</item>
      </string-array>
-
+-->
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
