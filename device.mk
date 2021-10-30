@@ -125,7 +125,7 @@ PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
 PRODUCT_PACKAGES += \
     init.qcom.rc \
@@ -300,12 +300,6 @@ PRODUCT_PACKAGES += \
     libavservices_minijail.vendor \
     libavservices_minijail_vendor:32
 
-# Prebuilt
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/product,product) \
-    $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/system,system) \
-    $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/system_ext,system_ext)
-
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
@@ -364,6 +358,12 @@ PRODUCT_PACKAGES += \
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
+
+# Hotword Enrollement
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hotword-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/hotword-hiddenapi-package-whitelist.xml \
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml \
+    $(LOCAL_PATH)/configs/privapp-permissions-ASUS_I002D.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-ASUS_I002D.xml
 
 # Update engine
 PRODUCT_PACKAGES += \
