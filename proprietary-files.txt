@@ -71,7 +71,7 @@ etc/videoeditor/Happy.mfim
 etc/videoeditor/Dynamic.mfim
 
 # DPM
--framework/tcmclient.jar
+framework/tcmclient.jar
 
 # Display
 product/etc/permissions/com.qti.snapdragon.sdk.display.xml
