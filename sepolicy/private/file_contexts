@@ -13,4 +13,7 @@
 /motor_fw1(/.*)?		u:object_r:log_file:s0
 /motor_fw2(/.*)?		u:object_r:log_file:s0
 
+# FPS Info
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps           u:object_r:sysfs_fps:s0
+
 /dev/block/platform/soc/1d84000\.ufshc/by-name/super   u:object_r:super_block_device:s0
