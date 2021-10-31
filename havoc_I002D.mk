@@ -42,8 +42,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-asus
 TARGET_DEVICE := WW_I002D
 
 # Official
-#HAVOC_MAINTAINER := Raileanu Cosmin (Comico)
-#HAVOC_GROUP_URL := https://t.me/havoc_i002d
 HAVOC_BUILD_TYPE := Official
 
 PRODUCT_SYSTEM_DEVICE := ASUS_I002D
