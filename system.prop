@@ -168,11 +168,6 @@ ro.vendor.build.asus.sku=WW
 ro.vendor.qti.va_aosp.support=1
 sys.vendor.qti.servicetracker.disable=true
 
-# Havoc-OS
-ro.havoc.device.name=Asus Zenfone 7
-ro.havoc.group.url=https://t.me/havoc_i002d
-ro.havoc.maintainer=Raileanu Cosmin (Comico)
-
 ro.secure=0
 ro.adb.secure=0
 ro.debuggable=1

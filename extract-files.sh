@@ -25,9 +25,9 @@ export VENDOR=asus
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-HAVOC_ROOT="$MY_DIR"/../../..
+lineage_ROOT="$MY_DIR"/../../..
 
-HELPER="${HAVOC_ROOT}/tools/extract-utils/extract_utils.sh"
+HELPER="${lineage_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -51,7 +51,7 @@ else
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$HAVOC_ROOT" false "$CLEAN_VENDOR"
+setup_vendor "$DEVICE" "$VENDOR" "$lineage_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files-vendor.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files-system_ext.txt "$SRC" "$SECTION"

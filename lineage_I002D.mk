@@ -19,30 +19,29 @@
 # product configuration (apps).
 #
 
-$(call inherit-product, device/asus/I002D/device.mk)
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 TARGET_BOOTANIMATION_SIZE := 1080p
 
-# Inherit some common Havoc stuff.
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+$(call inherit-product, device/asus/I002D/device.mk)
+
+# Inherit some common lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_BRAND := asus
 PRODUCT_DEVICE := I002D
 PRODUCT_MANUFACTURER := asus
 PRODUCT_MODEL := ASUS_I002D
-PRODUCT_NAME := havoc_I002D
+PRODUCT_NAME := lineage_I002D
 PRODUCT_SYSTEM_DEVICE := ASUS_I002
 PRODUCT_SYSTEM_NAME := WW_I002D
 
 PRODUCT_GMS_CLIENTID_BASE := android-asus
 
 TARGET_DEVICE := WW_I002D
-
-# Official
-HAVOC_BUILD_TYPE := Official
 
 PRODUCT_SYSTEM_DEVICE := ASUS_I002D
 PRODUCT_SYSTEM_NAME := WW_I002D
