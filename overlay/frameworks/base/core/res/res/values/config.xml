@@ -579,4 +579,7 @@
      <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
      <string name="config_SmartChargingSupspendValue" translatable="false">1</string>
      <string name="config_SmartChargingResumeValue" translatable="false">0</string>
+
+     <!-- FPSInfoService Fps file path -->
+    <string name="config_fpsInfoSysNode" translatable="false">/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps</string>
 </resources>
