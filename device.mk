@@ -92,18 +92,11 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.mapper@3.0-impl-qti-display \
-    vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.composer-service \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    gralloc.kona \
-    memtrack.kona \
     libion \
-    libtinyxml2 \
-    libtinyalsa \
-    libqdMetaData \
-    libdisplayconfig.vendor
+    libtinyxml2
+
+PRODUCT_PACKAGES += \
+    libtinyalsa
 
 # FM
 PRODUCT_PACKAGES += \
