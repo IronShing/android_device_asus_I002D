@@ -7,7 +7,6 @@ type firmware_file, fs_type, contextmount_type;
 type log_file, file_type;
 type persist_file, file_type;
 type xrom_file, file_type;
-type factory_file, file_type;
 
 # Files in userdata
 type vendor_qmipriod_data_file, file_type, data_file_type;
@@ -16,3 +15,6 @@ type vendor_qmipriod_data_file, file_type, data_file_type;
 type sysfs_gesture, sysfs_type, fs_type;
 type proc_touchscreen, proc_type, sysfs_type, fs_type;
 type sysfs_touchscreen, sysfs_type, fs_type;
+
+# Battery
+type sysfs_battery_supply, sysfs_type, fs_type; 

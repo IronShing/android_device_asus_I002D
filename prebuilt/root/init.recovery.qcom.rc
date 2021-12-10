@@ -64,3 +64,7 @@ on property:sys.usb.ffs.ready=1
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+on boot
+    # Chown node for Smart_Charging
+    chown system system /sys/class/power_supply/battery/input_suspend 
