@@ -177,6 +177,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.systemhelper@1.0
 
+# Trust
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
