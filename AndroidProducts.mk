@@ -18,5 +18,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/havoc_I002D.mk
 
 COMMON_LUNCH_CHOICES := \
+    havoc_I002D-user \
     havoc_I002D-userdebug \
     havoc_I002D-eng
