@@ -38,11 +38,13 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
+    odm \
     product \
     system \
     system_ext \
     vbmeta \
-    vbmeta_system
+    vbmeta_system \
+    vendor
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -50,10 +52,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-# tell update_engine to not change dynamic partition table during updates
-# needed since our qti_dynamic_partitions does not include
-# vendor and odm and we also dont want to AB update them
-TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -149,6 +147,7 @@ PRODUCT_PACKAGES += \
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/root,recovery/root) \
     $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/product,product) \
     $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/system,system) \
     $(call find-copy-subdir-files,*,device/asus/I002D/prebuilt/system_ext,system_ext)

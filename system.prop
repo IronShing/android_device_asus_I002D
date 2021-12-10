@@ -104,6 +104,9 @@ debug.sf.enable_hwc_vds=1
 #property to latch unsignaled buffer
 debug.sf.latch_unsignaled=1
 
+# enable tunnel encoding for amrwb
+tunnel.audio.encode = true
+
 #enable voice path for PCM VoIP by default
 use.voice.path.for.pcm.voip=true
 
@@ -123,9 +126,6 @@ persist.sys.force_sw_gles=1
 persist.vendor.radio.atfwd.start=true
 ro.kernel.qemu.gles=0
 qemu.hw.mainkeys=0
-
-#Expose aux camera for below packages
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.asus.snapcam,com.asus.camera
 
 #enable IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
@@ -159,6 +159,8 @@ ro.vendor.asus.poweroffalarm_support=1
 
 #Battery Property
 ro.charger.enable_suspend = 1
+ro.vendor.smartcharging=1
+ro.vendor.disableaicharging=1
 
 ro.gfx.driver.0=com.asus.gpudrivers.kona.api30
 ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.kona.api30
