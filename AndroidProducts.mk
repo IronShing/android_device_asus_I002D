@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_I002D.mk
+    $(LOCAL_DIR)/lineage_I002D.mk
 
 COMMON_LUNCH_CHOICES := \
-    havoc_I002D-user \
-    havoc_I002D-userdebug \
-    havoc_I002D-eng
+    lineage_I002D-user \
+    lineage_I002D-userdebug \
+    lineage_I002D-eng
