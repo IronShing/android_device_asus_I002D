@@ -24,6 +24,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_TARGET_VNDK_VERSION := 30
 
+#Target Bitgaps
+TARGET_ARCH := arm64
+TARGET_SDK_VERSION := 30
+$(call inherit-product, vendor/gapps/gapps.mk)
+
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
